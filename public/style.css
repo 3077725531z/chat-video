@@ -173,7 +173,7 @@ header h1 {
 
 .fullscreen-btn {
     position: absolute;
-    top: 8px;
+    bottom: 8px;
     right: 8px;
     background: rgba(0, 0, 0, 0.6);
     color: white;
@@ -186,6 +186,7 @@ header h1 {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     display: none; /* 默认隐藏，有远程视频时显示 */
+    transition: background 0.2s;
 }
 
 .fullscreen-btn:active {
