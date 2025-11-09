@@ -1,0 +1,20 @@
+node_modules/
+npm-debug.log
+.DS_Store
+*.log
+.env
+messages.json
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 部署相关
+.railway/
+.fly/
+render.yaml.bak
+
+# 系统文件
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+    <title>聊天视频小软件</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <h1>💬 聊天视频小软件</h1>
+            <div class="user-info">
+                <input type="text" id="usernameInput" placeholder="输入你的昵称" maxlength="20">
+                <button id="joinBtn">加入聊天</button>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 视频区域 -->
+            <div class="video-section">
+                <h2>视频通话</h2>
+                <div class="video-container">
+                    <div class="video-wrapper remote-video-wrapper">
+                        <video id="remoteVideo" autoplay playsinline></video>
+                        <div class="video-label">对方视频</div>
+                        <button class="fullscreen-btn" id="fullscreenBtn" title="全屏">⛶</button>
+                    </div>
+                    <div class="video-wrapper local-video-wrapper">
+                        <video id="localVideo" autoplay muted playsinline></video>
+                        <div class="video-label">我的视频</div>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <button id="startVideoBtn" disabled class="control-btn video-btn">
+                        <span class="btn-icon">📹</span>
+                        <span class="btn-text">开启视频</span>
+                    </button>
+                    <button id="stopVideoBtn" disabled class="control-btn video-btn">
+                        <span class="btn-icon">📹</span>
+                        <span class="btn-text">关闭视频</span>
+                    </button>
+                    <button id="startAudioBtn" disabled class="control-btn audio-btn">
+                        <span class="btn-icon">🎤</span>
+                        <span class="btn-text">开启音频</span>
+                    </button>
+                    <button id="stopAudioBtn" disabled class="control-btn audio-btn">
+                        <span class="btn-icon">🎤</span>
+                        <span class="btn-text">关闭音频</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 聊天区域 -->
+            <div class="chat-section">
+                <h2>聊天消息</h2>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="输入消息..." disabled>
+                    <button id="sendBtn" disabled>发送</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 在线用户列表 -->
+        <div class="users-section">
+            <h3>在线用户</h3>
+            <ul id="usersList"></ul>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
